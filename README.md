@@ -10,18 +10,18 @@ along with inline SQL. When you run this with `sbt run` you get the following er
 
 Curiously if you remove the lifting of the value and instead hardcode it, i.e.
 
-```
-  private def nowFromMinutes = quote { minutes: Long =>
-    infix"INTERVAL '15 minutes'".as[OffsetDateTime]
-  }
+```scala
+private def nowFromMinutes = quote { minutes: Long =>
+  infix"INTERVAL '15 minutes'".as[OffsetDateTime]
+}
 ```
 
 Instead of
 
-```
-  private def nowFromMinutes = quote { minutes: Long =>
-    infix"INTERVAL '$minutes minutes'".as[OffsetDateTime]
-  }
+```scala
+private def nowFromMinutes = quote { minutes: Long =>
+  infix"INTERVAL '$minutes minutes'".as[OffsetDateTime]
+}
 ```
 
 Then it works fine, which means that it appears to be a bug with encoding the values in a `ResultSet`

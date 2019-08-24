@@ -23,7 +23,7 @@ object Main extends App with StrictLogging {
     for {
       _      <- queries.clear()
       _      <- queries.insert(OffsetDateTime.now().minusMinutes(10))
-      before <- queries.retriveAll
+      before <- queries.retrieveAll
       _      = println(before)
       after <- queries.retrieve(15)
       _      = println(after)

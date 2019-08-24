@@ -11,7 +11,7 @@ class Queries(override val ctx: PostgresMonixJdbcContext[SnakeCase]) extends Pos
 
   def insert(timestamp: OffsetDateTime) = ctx.run(insertQuote(timestamp))
 
-  def retriveAll = ctx.run(retrieveAllQuote)
+  def retrieveAll = ctx.run(retrieveAllQuote)
 
   def retrieve(minutes: Long) = ctx.run(retrieveQuote(minutes))
 
