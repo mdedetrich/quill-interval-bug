@@ -1,9 +1,9 @@
 import java.time.OffsetDateTime
 
-import io.getquill.{PostgresMonixJdbcContext, SnakeCase}
+import io.getquill.{PostgresJdbcContext, SnakeCase}
 import org.flywaydb.core.Flyway
 
-class Queries(override val ctx: PostgresMonixJdbcContext[SnakeCase]) extends PostgresEncodings with Quotes[SnakeCase] {
+class Queries(override val ctx: PostgresJdbcContext[SnakeCase]) extends PostgresEncodings with Quotes[SnakeCase] {
 
   import ctx._
 

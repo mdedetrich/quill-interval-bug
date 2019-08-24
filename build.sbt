@@ -3,7 +3,7 @@ val postgresVersion = "42.2.5"
 val flywayVersion   = "5.2.4"
 
 libraryDependencies ++= Seq(
-  "io.getquill"    %% "quill-jdbc-monix" % quillVersion,
+  "io.getquill"    %% "quill-jdbc"       % quillVersion,
   "org.postgresql" % "postgresql"        % postgresVersion,
   "org.flywaydb"   % "flyway-core"       % flywayVersion
 )

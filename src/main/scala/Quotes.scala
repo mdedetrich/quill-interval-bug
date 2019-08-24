@@ -1,8 +1,7 @@
 import java.time.OffsetDateTime
 
+import io.getquill.NamingStrategy
 import io.getquill.context.jdbc.PostgresJdbcContextBase
-import io.getquill.{NamingStrategy, PostgresMonixJdbcContext, SnakeCase}
-import org.flywaydb.core.Flyway
 
 trait Quotes[N <: NamingStrategy] extends PostgresEncodings {
 
