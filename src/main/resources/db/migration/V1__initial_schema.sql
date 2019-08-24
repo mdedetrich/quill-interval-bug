@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS test_table
+(
+    timestamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
+)
