@@ -9,8 +9,8 @@ trait Quotes[N <: NamingStrategy] extends PostgresEncodings {
 
   import ctx._
 
-  private def nowFromMinutes = quote { minutes: Long =>
-    infix"INTERVAL '$minutes minutes'".as[OffsetDateTime]
+  private def nowFromMinutes = quote { minutes: Int =>
+    infix"make_interval(mins => $minutes)".as[OffsetDateTime]
   }
 
   def clearQuote = quote {
@@ -25,7 +25,11 @@ trait Quotes[N <: NamingStrategy] extends PostgresEncodings {
     query[TestTable]
   }
 
-  def retrieveQuote(minutes: Long) = quote {
+  def retrieveQuote(minutes: Int) = quote {
     query[TestTable].filter(t => minus(now(), t.timestamp) < nowFromMinutes(lift(minutes)))
+  }
+
+  def retrieve2Quote(counter: Long) = quote {
+    query[TestTable].filter(_.counter == lift(counter))
   }
 }

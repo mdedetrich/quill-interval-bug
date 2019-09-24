@@ -17,6 +17,8 @@ object Main extends App with StrictLogging {
   queries.insert(OffsetDateTime.now().minusMinutes(10))
   val before = queries.retrieveAll
   println(before)
+  println(before)
+//  queries.retrieve2(0)
   val after = queries.retrieve(15)
   println(after)
 }

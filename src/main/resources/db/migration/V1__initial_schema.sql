@@ -1,4 +1,5 @@
 CREATE TABLE IF NOT EXISTS test_table
 (
+    counter   BIGINT NOT NULL DEFAULT 0,
     timestamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
 )

@@ -1,3 +1,3 @@
 import java.time.OffsetDateTime
 
-final case class TestTable(timestamp: OffsetDateTime)
+final case class TestTable(timestamp: OffsetDateTime, counter: Long)

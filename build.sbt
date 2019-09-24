@@ -1,5 +1,5 @@
 val quillVersion    = "3.4.3"
-val postgresVersion = "42.2.5"
+val postgresVersion = "42.2.6"
 val flywayVersion   = "5.2.4"
 
 libraryDependencies ++= Seq(
@@ -10,4 +10,4 @@ libraryDependencies ++= Seq(
 
 scalaVersion := "2.12.9"
 
-fork := true
+fork := false 

@@ -13,7 +13,9 @@ class Queries(override val ctx: PostgresJdbcContext[SnakeCase]) extends Postgres
 
   def retrieveAll = ctx.run(retrieveAllQuote)
 
-  def retrieve(minutes: Long) = ctx.run(retrieveQuote(minutes))
+  def retrieve(minutes: Int) = ctx.run(retrieveQuote(minutes))
+
+  def retrieve2(counter: Long) = ctx.run(retrieve2Quote(counter))
 
   def migrate() = {
     val flyway = Flyway.configure().dataSource(ctx.dataSource)
